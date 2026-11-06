@@ -1,0 +1,8 @@
+{
+  "name": "SMP SmartLearn — Sistem Informasi E-Learning SMP",
+  "description": "Sistem Informasi E-Learning lengkap untuk Sekolah Menengah Pertama (SMP) dengan 3 role (Admin, Guru, Murid), kelas VII-IX, materi interaktif, tugas, ujian CBT, penilaian, forum, dan ekspor SQL/ERD.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
