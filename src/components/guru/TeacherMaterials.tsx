@@ -655,48 +655,14 @@ export const TeacherMaterials: React.FC = () => {
                 <span className="text-[11px] font-bold text-blue-700 uppercase">{viewingLesson.chapter}</span>
                 <h3 className="font-black text-xl text-slate-900 mt-1">{viewingLesson.title}</h3>
               </div>
-              <div className="flex items-center gap-1.5 shrink-0">
-                <button
-                  type="button"
-                  onClick={() => {
-                    const schoolInfo = getSchoolInfoFromSettings(systemSettings);
-                    const subj = subjects.find((s) => s.id === viewingLesson.subject_id);
-                    downloadLessonPDF(
-                      viewingLesson,
-                      subj?.name || 'Mata Pelajaran',
-                      currentUser?.name || 'Dewan Guru SMP N 1 JAYA',
-                      schoolInfo
-                    );
-                    showToast(`Mengunduh modul "${viewingLesson.title}" format PDF...`, 'success');
-                  }}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white rounded-xl text-xs font-bold transition shadow-xs"
-                  title="Unduh Format PDF"
-                >
-                  <FileDown className="w-3.5 h-3.5" />
-                  Unduh PDF
-                </button>
-                <button
-                  type="button"
-                  onClick={() => {
-                    const subj = subjects.find((s) => s.id === viewingLesson.subject_id);
-                    downloadLessonTXT(
-                      viewingLesson,
-                      subj?.name || 'Mata Pelajaran',
-                      currentUser?.name || 'Dewan Guru SMP N 1 JAYA',
-                      systemSettings?.schoolName || 'SMP N 1 JAYA'
-                    );
-                    showToast(`Mengunduh rangkuman "${viewingLesson.title}" format TXT...`, 'success');
-                  }}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition"
-                  title="Unduh Format TXT"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                  Unduh TXT
-                </button>
-                <button onClick={() => setViewingLesson(null)} className="text-slate-400 hover:text-slate-600 p-1">
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
+              <button
+                type="button"
+                onClick={() => setViewingLesson(null)}
+                className="p-1.5 rounded-xl text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition shrink-0 cursor-pointer"
+                title="Tutup Modal"
+              >
+                <X className="w-5 h-5" />
+              </button>
             </div>
 
             <div className="py-4 text-xs text-slate-700 leading-relaxed whitespace-pre-line border-b border-slate-100">
